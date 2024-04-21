@@ -80,6 +80,10 @@ int main()
 	cout << "h = ";
 	h.imprimir();
 
+	cout << "potencia negativa:" << endl;
+	Complexo i = h.pow(-2);
+	i.imprimir();
+
 	cout << "igualdade:" << endl;
 	cout << (b == c) << endl;
 
@@ -101,9 +105,6 @@ int main()
 	{
 		cout << "Teste bem sucedido" << endl;
 	}
-
-	Complexo o = m.pow(-2);
-	o.imprimir();
 
 	return 0;
 }
