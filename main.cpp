@@ -91,16 +91,19 @@ int main()
 
 	// Testes complexos
 
-	Complexo a(1., 2.);
+	Complexo l(1., 2.);
 	Complexo m(3., 4.);
 	Complexo n(5., 6.);
 	Complexo j(7., 8.);
 	Complexo k(9., 10.);
 
-	if ((Complexo(2., 0.) * a - m * n) / (j * j * k * k) == (Complexo(2., 0.) * a - m * n) / (j.pow(2) * k.pow(2)))
+	if ((Complexo(2., 0.) * l - m * n) / (j * j * k * k) == (Complexo(2., 0.) * l - m * n) / (j.pow(2) * k.pow(2)))
 	{
 		cout << "Teste bem sucedido" << endl;
 	}
+
+	Complexo o = m.pow(-2);
+	o.imprimir();
 
 	return 0;
 }

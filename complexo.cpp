@@ -16,7 +16,7 @@ Complexo::Complexo()
 void Complexo::imprimir()
 {
 	// Imprime na tela "a+bi" (sem aspas) e sem espaços.
-	cout << a << "+" << b << "i" << endl;
+	cout << a << "+" << b << "i";
 }
 
 // Para Fazer
@@ -37,13 +37,19 @@ Complexo::Complexo(float a_, float b_)
 // Método de Potência de um número imaginário elevado a um número inteiro "i_"
 Complexo Complexo::pow(int i_)
 {
-	// Se i_ for zero, retornar 1
+	// i_ = 0, retorna 1
 	if (i_ == 0)
 	{
 		return Complexo(1, 0);
 	}
 
-	// Se i_ for positivo, retornar (a+bi)^i_
+	// i_ < 0, retorna 1/(a+bi)^(-i_)
+	if (i_ < 0)
+	{
+		return Complexo(1, 0) / pow(-i_);
+	}
+
+	// i_ > 0, retorna (a+bi)^i_
 	Complexo novo_complexo = *this;
 
 	for (int i = 1; i < i_; i++)
@@ -53,8 +59,6 @@ Complexo Complexo::pow(int i_)
 	}
 
 	return Complexo(novo_complexo);
-
-	// para i_ negativo > não vão ter testes.
 }
 
 // Para Fazer
