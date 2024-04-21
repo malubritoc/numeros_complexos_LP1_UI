@@ -1,5 +1,3 @@
-#Makefile Padrão
-#Autor Kayo Gonçalves e Silva
 PROG = main
 CC = g++
 CPPFLAGS = -O0 -g -ansi -Wall -pedantic  
